@@ -22,7 +22,7 @@ public class DebugMenuScript : MonoBehaviour {
             "Game",
             "Title",
             "MainMenu",
-            "Scene03",
+            "Test",
             "Scene04",
             "Scene05",
             "Scene06",
@@ -80,17 +80,20 @@ public class DebugMenuScript : MonoBehaviour {
                 // どのボタンが押されたかによって違う処理をする(別のシーンへ移動)
                 switch (i)
                 {
-                    case 0:
-                        //UnityEngine.SceneManagement.SceneManager.LoadScene("game");
-                        break;
-                    case 1:
-                        UnityEngine.SceneManagement.SceneManager.LoadScene("title");
-                        break;
-                    case 2:
-                        //UnityEngine.SceneManagement.SceneManager.LoadScene("main_menu");
-                        break;
-                    default:
-                        break;
+                case 0:
+                    //UnityEngine.SceneManagement.SceneManager.LoadScene("game");
+                    break;
+                case 1:
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("title");
+                    break;
+                case 2:
+                    //UnityEngine.SceneManagement.SceneManager.LoadScene("main_menu");
+                    break;
+                case 3:
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("test");
+                    break;
+                default:
+                    break;
                 }
             }
         }
