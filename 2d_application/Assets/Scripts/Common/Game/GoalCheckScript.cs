@@ -20,6 +20,10 @@ public class GoalCheckScript : MonoBehaviour {
             if (touch_time_ >= kGoalTouchTime) {
                 MhCommon.Print("GoalCheckScript::Update goal");
                 is_goal_ = true;
+
+                // 他の場所に通知するために共有データにステージクリアを設定
+                ShareData.Instance.game_parameter_.SetSuccess();
+
             }
         }
     }

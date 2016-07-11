@@ -77,13 +77,18 @@
     <Compile Include="Assets\Scripts\Common\Game\StageData.cs" />
     <Compile Include="Assets\Scripts\Common\Game\StageDefine.cs" />
     <Compile Include="Assets\Scripts\Common\MhCommon.cs" />
+    <Compile Include="Assets\Scripts\Common\PauseObject.cs" />
+    <Compile Include="Assets\Scripts\Common\Pauser.cs" />
     <Compile Include="Assets\Scripts\Common\ProgressScript.cs" />
+    <Compile Include="Assets\Scripts\Common\Rigidbody2dVelocityData.cs" />
+    <Compile Include="Assets\Scripts\Common\RigidbodyVelocityData.cs" />
     <Compile Include="Assets\Scripts\Common\ShareData.cs" />
     <Compile Include="Assets\Scripts\Common\SingletonMonoBehaviour.cs" />
     <Compile Include="Assets\Scripts\Common\TouchInfo.cs" />
     <Compile Include="Assets\Scripts\Common\TouchInterface.cs" />
     <Compile Include="Assets\Scripts\Common\TouchManager.cs" />
     <Compile Include="Assets\Scripts\Scene\Init\InitSceneScript.cs" />
+    <Compile Include="Assets\Scripts\Scene\ThrowCan00\ThrowAnimation00ChaHandScript.cs" />
     <Compile Include="Assets\Scripts\Scene\Title\TitleScript.cs" />
   </ItemGroup>
   <ItemGroup>

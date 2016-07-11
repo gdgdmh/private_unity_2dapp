@@ -12,7 +12,7 @@ public class InitSceneScript : MonoBehaviour {
         // 共有データの初期化
         // 重いデータがあるかもしれないのでスレッドを使用したかったけど、
         // シングルトンに対してスレッドを使用できなかったので現状は使わない
-        ShareData.Instance.Initialize();
+        //ShareData.Instance.Initialize();
         // 次のシーンへ
         UnityEngine.SceneManagement.SceneManager.LoadScene("debug_menu");
     }

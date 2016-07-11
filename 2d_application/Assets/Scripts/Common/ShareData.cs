@@ -14,6 +14,7 @@ public class ShareData : SingletonMonoBehaviour<ShareData> {
             // シーン遷移破棄させない
             DontDestroyOnLoad(this.gameObject);
         }
+        Initialize();
     }
 
     void OnDestroy() {
@@ -21,12 +22,12 @@ public class ShareData : SingletonMonoBehaviour<ShareData> {
         game_parameter_ = null;
     }
 
-    public void Initialize() {
+    void Initialize() {
         game_parameter_ = new GameParameter();
         game_parameter_.Initialize();
 
     }
     
     // ゲーム間でやり取りするデータ
-    private GameParameter game_parameter_ { set; get; }
+    public GameParameter game_parameter_ { set; get; }
 }
