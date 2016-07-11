@@ -15,9 +15,9 @@ public class GameManagerScript : MonoBehaviour {
         // 停止状態にしておく
         pauser_.is_pause_ = true;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 	
         // シーンが切り替わったときに一回だけ実行
         if (past_scene_ != scene_) {
@@ -25,9 +25,13 @@ public class GameManagerScript : MonoBehaviour {
             case Scene.kPlaying:
                 SceneInitPlaying();
                 break;
+            case Scene.kClearEffect:
+                SceneInitClearEffect();
+                break;
             default:
                 break;
             }
+            past_scene_ = scene_;
         }
 
         // 現在のシーンを毎回実行
@@ -75,8 +79,8 @@ public class GameManagerScript : MonoBehaviour {
         if (ShareData.Instance.game_parameter_.is_finish_ == true) {
             if (ShareData.Instance.game_parameter_.is_clear_ == true) {
                 // クリア
-				//scene_ = Scene.kClearEffect;
-                scene_ = Scene.kNextScene;
+				scene_ = Scene.kClearEffect;
+                //scene_ = Scene.kNextScene;
             } else {
                 // 失敗
 				scene_ = Scene.kFailureEffect;
@@ -84,7 +88,12 @@ public class GameManagerScript : MonoBehaviour {
             }
         }
     }
-
+    private void SceneInitClearEffect() {
+        // アクティブ状態にする
+        clear_animation_root_.SetActive(true);
+        // Animatorから再生
+        clear_animation_root_.GetComponent<Animator>().Play("clear", 0, 0.0f);
+    }
     private void SceneClearEffect() {
     }
 
@@ -97,6 +106,8 @@ public class GameManagerScript : MonoBehaviour {
 
     // ポーズシステム
     public Pauser pauser_;
+    public GameObject clear_animation_root_;
+    //public Animator animator_;
 
     private enum Scene {
         kNone,          // 特に何もしない
@@ -109,6 +120,5 @@ public class GameManagerScript : MonoBehaviour {
 
     private Scene scene_; // シーン
     private Scene past_scene_; // 前のシーン
-
 
 }
