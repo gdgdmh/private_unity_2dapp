@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="2d_application.CSharp.Plugins.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Common\Game\GameManagerScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DebugMenuAssets\Scripts\DebugMenuScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Common\Game\GameManagerScript.cs" Line="61" Column="2" />
+      <File FileName="Assets\DebugMenuAssets\Scripts\DebugMenuScript.cs" Line="16" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

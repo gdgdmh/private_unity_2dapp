@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 /**
  * ゲームマネージャー(主なゲーム中の流れを管理する)
@@ -91,10 +90,16 @@ public class GameManagerScript : MonoBehaviour {
     private void SceneInitClearEffect() {
         // アクティブ状態にする
         clear_animation_root_.SetActive(true);
+
+        Animator animator = clear_animation_root_.GetComponent<Animator>();
+        animator.Rebind();
         // Animatorから再生
-        clear_animation_root_.GetComponent<Animator>().Play("clear", 0, 0.0f);
+        animator.Play("clear", 0, 0.0f);
     }
     private void SceneClearEffect() {
+        Animator animator = clear_animation_root_.GetComponent<Animator>();
+        if (animator) {
+        }
     }
 
     private void SceneFailureEffect() {
@@ -107,7 +112,6 @@ public class GameManagerScript : MonoBehaviour {
     // ポーズシステム
     public Pauser pauser_;
     public GameObject clear_animation_root_;
-    //public Animator animator_;
 
     private enum Scene {
         kNone,          // 特に何もしない
