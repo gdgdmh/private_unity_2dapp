@@ -50,6 +50,9 @@ public class GameManagerScript : MonoBehaviour {
         case Scene.kFailureEffect:
             SceneFailureEffect();
             break;
+        case Scene.kEndWait:
+            SceneEndWait();
+            break;
         case Scene.kNextScene:
             SceneNextScene();
             break;
@@ -98,11 +101,23 @@ public class GameManagerScript : MonoBehaviour {
     }
     private void SceneClearEffect() {
         Animator animator = clear_animation_root_.GetComponent<Animator>();
-        if (animator) {
+        //MhCommon.Print("SceneClearEffect time " + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        // 再生終了しているなら次のシーンへ
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f) {
+            animator.Stop();
+            scene_ = Scene.kEndWait;
         }
     }
 
     private void SceneFailureEffect() {
+    }
+
+    private void SceneEndWait() {
+        // 画面にタッチしたら次のシーンへ
+        // できればボタンとか用意して次に進む、リトライなどの選択をさせる
+        if (TouchManager.Instance.IsTouchEnded()) {
+            scene_ = Scene.kNextScene;
+        }
     }
 
     private void SceneNextScene() {
@@ -119,6 +134,7 @@ public class GameManagerScript : MonoBehaviour {
         kPlaying,       // ゲーム中
         kClearEffect,   // クリアエフェクト出す
         kFailureEffect, // 失敗エフェクトを出す
+        kEndWait,       // 終了してユーザーの能動的な操作を待つ
         kNextScene,     // 次のシーンへ
     }
 

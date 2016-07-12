@@ -72,6 +72,7 @@
     <Compile Include="Assets\DebugMenuAssets\Scripts\DebugMenuScript.cs" />
     <Compile Include="Assets\Scripts\Common\ApplicationConstant.cs" />
     <Compile Include="Assets\Scripts\Common\Game\GameManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Common\Game\GameObjectScrollViewContentScript.cs" />
     <Compile Include="Assets\Scripts\Common\Game\GameParameter.cs" />
     <Compile Include="Assets\Scripts\Common\Game\GoalCheckScript.cs" />
     <Compile Include="Assets\Scripts\Common\Game\StageData.cs" />
